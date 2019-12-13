@@ -1,0 +1,22 @@
+﻿@model WeatherForecast
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>View</h1>
+
+<div class="text-left">
+    <h1 class="display-4">Weather forecast for @Model.title</h1>
+    @foreach (var forecast in Model.consolidated_weather)
+    {
+        <div>
+            <h4>@forecast.applicable_date</h4>
+            <div>Min: @forecast.min_temp Cº, Max: @forecast.max_temp Cº</div>
+            <div>@forecast.weather_state_name</div>
+            <img src="https://www.metaweather.com/static/img/weather/@(forecast.weather_state_abbr).svg" style="width:32px" />
+            <hr />
+        </div>
+    }
+</div>
