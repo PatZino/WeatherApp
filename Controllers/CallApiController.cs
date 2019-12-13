@@ -40,7 +40,7 @@ namespace MyMvcApp.Controllers
             return null;
         }
 
-        public async Task<IActionResult> View()
+        public async Task<IActionResult> ViewApi()
         {
             var model = await GetWeatherForecasts();
             // Pass the data into the View
